@@ -1,1 +1,57 @@
-<p>todo-list works!</p>
+<div *ngFor="let todo of todos; let i = index" class="p-inputgroup">
+  <input
+    type="text"
+    pInputText
+    [disabled]="!todo.editMode"
+    [(ngModel)]="todo.value"
+    [ngClass]="{ 'todo-list-textbox-readonly': !todo.editMode }"
+  />
+
+  <button
+    *ngIf="!todo.editMode"
+    type="button"
+    pButton
+    pRipple
+    icon="pi pi-pencil"
+    class="p-button-warning"
+    (click)="editTodo(i)"
+  ></button>
+
+  <button
+    *ngIf="todo.editMode"
+    type="button"
+    pButton
+    pRipple
+    icon="pi pi-check"
+    class="p-button-success"
+    (click)="confirmEditTodo(i)"
+  ></button>
+
+  <button
+    type="button"
+    pButton
+    pRipple
+    icon="pi pi-times"
+    class="p-button-danger"
+    (click)="deleteTodo(i)"
+  ></button>
+</div>
+
+<div class="p-inputgroup">
+  <input
+    type="text"
+    pInputText
+    placeholder="New Item"
+    [(ngModel)]="value"
+    (keyup.enter)="addNewTodo()"
+  />
+
+  <button
+    type="button"
+    pButton
+    pRipple
+    icon="pi pi-plus"
+    class="p-button-info"
+    (click)="addNewTodo()"
+  ></button>
+</div>
