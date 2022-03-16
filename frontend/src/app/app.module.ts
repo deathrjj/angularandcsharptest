@@ -10,14 +10,17 @@ import { CounterComponent } from './pages/counter/counter.component';
 import { FetchDataComponent } from './pages/fetch-data/fetch-data.component';
 import { TestComponent } from './pages/test/test.component';
 import { TodoListComponent } from './pages/todo-list/todo-list.component';
+import { CalculatorComponent } from './pages/calculator/calculator.component';
 
 // Component Imports
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import {MenubarModule} from 'primeng/menubar';
 import { HttpClientModule } from '@angular/common/http';
+import {InputNumberModule} from 'primeng/inputnumber';
 
-const primengModules = [InputTextModule,ButtonModule, MenubarModule];
+
+const primengModules = [InputTextModule,ButtonModule, MenubarModule, InputNumberModule];
 
 
 @NgModule({
@@ -28,7 +31,8 @@ const primengModules = [InputTextModule,ButtonModule, MenubarModule];
     CounterComponent,
     FetchDataComponent,
     TestComponent,
-    TodoListComponent
+    TodoListComponent,
+    CalculatorComponent
   ],
   imports: [
     BrowserModule,

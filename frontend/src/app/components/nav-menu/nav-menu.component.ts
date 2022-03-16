@@ -19,6 +19,7 @@ export class NavMenuComponent {
 
   items: MenuItem[] = [
     { label: 'Home', routerLink: '/'},
-    { label: 'Todo List', routerLink: 'todo-list'}
+    { label: 'Todo List', routerLink: 'todo-list'},
+    { label: 'Calculator', routerLink: 'calculator'}
   ];
 }

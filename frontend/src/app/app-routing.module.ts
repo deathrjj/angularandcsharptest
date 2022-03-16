@@ -6,6 +6,7 @@ import { CounterComponent } from './pages/counter/counter.component';
 import { FetchDataComponent } from './pages/fetch-data/fetch-data.component';
 import { TestComponent } from './pages/test/test.component';
 import { TodoListComponent } from './pages/todo-list/todo-list.component';
+import { CalculatorComponent } from './pages/calculator/calculator.component';
 
 // Page routes. Add here for a new page.
 const routes: Routes = [
@@ -23,6 +24,9 @@ const routes: Routes = [
   
   // Todo List page
   { path: 'todo-list', component: TodoListComponent },
+
+  //Calculator Page
+  { path: 'calculator', component: CalculatorComponent },
 ];
 
 @NgModule({
