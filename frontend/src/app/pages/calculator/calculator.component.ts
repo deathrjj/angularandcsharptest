@@ -13,7 +13,7 @@ enum CalculatorOperation {
   CE = 'ce',
   Minus = '-',
   C = 'c',
-  Decimal = 'decimal',
+  Decimal = '.',
   Equals = '=',
   Plus = '+'
 }
@@ -107,10 +107,6 @@ export class CalculatorComponent {
 
   private updateCallstack(value: number | CalculatorOperation): void {
     if(typeof value !== 'number') {
-      // if (typeof this.callstack[this.callstack.length] !== 'number') {
-      //   this.callstack.pop();
-      // } 
-
       switch (value) {
         case CalculatorOperation.Sqrt: {
           const currentNumber = this.getCurrentNumber();
@@ -146,6 +142,8 @@ export class CalculatorComponent {
           const expression = this.callstack.join('');
           const res = eval(expression);
           console.log(res);
+          this.callstack = [res];
+          this.value = res;
           this.callstack.push(value);
           console.log(this.callstack);
           break;
