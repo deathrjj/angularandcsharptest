@@ -31,8 +31,13 @@ Ideally would be saving to database, may implement at a later time.
 Basic calculator with addition, subtraction, mulitplication, division, percentage and square root.
 
 Example: 500 x 4.5 - 6 = 2244
+
 ![calculator1](./docs/calculator1.png)
+
 ![calculator2](./docs/calculator2.png)
+
 ![calculator3](./docs/calculator3.png)
+
 ![calculator4](./docs/calculator4.png)
+
 ![calculator5](./docs/calculator5.png)
