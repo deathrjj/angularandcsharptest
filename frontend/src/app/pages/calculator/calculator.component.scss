@@ -1,4 +1,11 @@
 .buttons {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 70px);
+  grid-template-rows: repeat(4, 70px);
+}
+
+.outputDisplay {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  opacity: 1;
 }

@@ -1,18 +1,12 @@
 <div class="calculator">
   <p-inputNumber
+    [ngClass]="{ outputDisplay: true }"
     [(ngModel)]="value"
     mode="decimal"
     [minFractionDigits]="0"
     [maxFractionDigits]="10"
+    [disabled]="true"
   ></p-inputNumber>
-
-  <!-- <input type="text" pInputText [(ngModel)]="value" /> -->
-
-  {{ value }}
-  <br />
-  {{ accumulator }}
-  <br />
-  {{ callstack | json }}
 
   <div class="buttons">
     <div *ngFor="let button of buttons">
