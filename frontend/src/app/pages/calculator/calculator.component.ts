@@ -57,52 +57,7 @@ export class CalculatorComponent {
   ]; 
 
   onButtonClicked(value: number | CalculatorOperation) {
-    // console.log(value);
-
     this.updateCallstack(value);
-    
-    // if(typeof value === 'number') {
-    //   //if last button pressed !number clear value
-    //   this.value+=value;
-    // } else {
-    //   // CalculatorOperation
-    //   // On operation:
-    //   // calculate
-    //   // Save to ACC
-    //   // Clear value 
-    //   // Save button thing as current operation
-    //   // 
-      
-    //   switch (value) {
-    //     case CalculatorOperation.Sqrt: {
-    //       const res = Math.sqrt(Number(this.value));
-    //       this.value = res.toString();
-    //       break;
-    //     }
-    //     case CalculatorOperation.Percent:{
-    //       const res = Number(this.value)/100
-    //       this.value = res.toString();
-    //       break;
-    //     }
-    //     case CalculatorOperation.CE:{
-    //       this.value = "";
-    //       break;
-    //     }
-    //     case CalculatorOperation.C:{
-    //       this.value = "";
-    //       this.accumulator = 0;
-    //       break;
-    //     }
-    //     case CalculatorOperation.Plus:{
-    //       this.currentOperation = CalculatorOperation.Plus;
-    //     }
-
-
-    //   } 
-      
-    // }
-
-    // console.log(this.accumulator, this.currentOperation);
   }
 
   private updateCallstack(value: number | CalculatorOperation): void {
@@ -138,6 +93,10 @@ export class CalculatorComponent {
           this.value=0;
           break;
         }
+        case CalculatorOperation.Decimal:{
+          this.callstack.push(value)
+          break;
+        }
         default: {
           const expression = this.callstack.join('');
           const res = eval(expression);
@@ -154,8 +113,10 @@ export class CalculatorComponent {
         this.callstack = [];
       }
 
-      if(typeof this.callstack[this.callstack.length - 1] !== 'number') {
-        this.lastNumberStartIndex = this.callstack.length;
+      if(typeof this.callstack[this.callstack.length - 1] !== 'number'){
+        if(this.callstack[this.callstack.length - 1] !== '.'){
+          this.lastNumberStartIndex = this.callstack.length;
+        }
       }
 
 
