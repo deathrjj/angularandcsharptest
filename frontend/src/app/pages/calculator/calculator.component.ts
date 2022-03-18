@@ -67,12 +67,14 @@ export class CalculatorComponent {
           const currentNumber = this.getCurrentNumber();
           const res = Math.sqrt(currentNumber);
           this.callstack = [...this.callstack.slice(0, this.lastNumberStartIndex ?? 0), res];
+          this.value = res;
           break;
         }
         case CalculatorOperation.Percent: {
           const currentNumber = this.getCurrentNumber();
           const res = currentNumber/100;
           this.callstack = [...this.callstack.slice(0, this.lastNumberStartIndex ?? 0), res];
+          this.value = res;
           break;
         }
         case CalculatorOperation.Equals: {

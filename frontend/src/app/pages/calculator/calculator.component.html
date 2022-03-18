@@ -1,12 +1,13 @@
 <div class="calculator">
-  <p-inputNumber
-    [ngClass]="{ outputDisplay: true }"
-    [(ngModel)]="value"
-    mode="decimal"
-    [minFractionDigits]="0"
-    [maxFractionDigits]="10"
-    [disabled]="true"
-  ></p-inputNumber>
+  <div class="output-display">
+    <p-inputNumber
+      [(ngModel)]="value"
+      mode="decimal"
+      [minFractionDigits]="0"
+      [maxFractionDigits]="20"
+      [disabled]="true"
+    ></p-inputNumber>
+  </div>
 
   <div class="buttons">
     <div *ngFor="let button of buttons">
@@ -15,10 +16,9 @@
         pRipple
         type="button"
         class="p-button-rounded p-button-outlined"
+        [label]="button.label"
         (click)="onButtonClicked(button.value)"
-      >
-        {{ button.label }}
-      </button>
+      ></button>
     </div>
   </div>
 </div>
